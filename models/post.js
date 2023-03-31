@@ -1,0 +1,2 @@
+/* what exactly is a post and what exactly is a comment
+has title and contents */

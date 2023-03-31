@@ -1,0 +1,5 @@
+/*
+post and create
+delete and destroy
+put and update 
+*/

@@ -3,6 +3,7 @@ const express = require('express');
 const session = require('express-session');
 const expressHbs = require('express-handlebars');
 const controllers = require('./controllers');
+const helpers = require('./utils/helpers');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
