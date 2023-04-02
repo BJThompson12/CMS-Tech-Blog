@@ -39,5 +39,24 @@ router.get('/', async (req, res) => {
     res.status(500).json(err);
   }
 });
+// find one post by ID
+router.get('/:id', async (req, res) => {
+  // find a single product by its `id`
+  try {
+    const postData = await Post.findByPk(req.params.id,{
+    // be sure to include its associated Category and Tag
+       include: [
+        {
+           model: Comment,
+      include: {model: User, attributes: ['username']}
+    },
+  ],
+    });
+    res.status(200).json(postData);
+    console.log('Find single post SUCCESS');
+    } catch (err) {
+      res.status(500).json(err);
+    }
+});
 
 module.exports = router;
